@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { PageIntro } from "@/components/ui";
 import { Inventory } from "@/components/inventory";
 import { getVehicles } from "@/lib/vehicles";
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Estoque de seminovos em Goiânia",
   description:

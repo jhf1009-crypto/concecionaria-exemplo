@@ -2,15 +2,15 @@ import { chromium } from "playwright";
 import lighthouse from "lighthouse";
 import fs from "node:fs/promises";
 await fs.mkdir("qa", { recursive: true });
-const browser = await chromium.launch({
-  headless: true,
-  args: ["--remote-debugging-port=9222"],
-  ...(process.env.CHROME_PATH
-    ? { executablePath: process.env.CHROME_PATH }
-    : {}),
-});
 const scores = [];
 for (const desktop of [false, true]) {
+  const browser = await chromium.launch({
+    headless: true,
+    args: ["--remote-debugging-port=9222"],
+    ...(process.env.CHROME_PATH
+      ? { executablePath: process.env.CHROME_PATH }
+      : {}),
+  });
   const result = await lighthouse(
     process.env.QA_URL || "http://localhost:3000",
     {
@@ -68,6 +68,7 @@ for (const desktop of [false, true]) {
         details: a.details,
       })),
   });
+  await browser.close();
 }
 await fs.writeFile(
   "qa/lighthouse-summary.json",
@@ -80,4 +81,3 @@ console.log(
     2,
   ),
 );
-await browser.close();

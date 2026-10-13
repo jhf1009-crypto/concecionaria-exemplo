@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/link";
 import { useEffect, useRef } from "react";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { WhatsApp } from "./ui";
@@ -50,7 +50,8 @@ export function Hero() {
             src={site.images.hero}
             alt="Jeep Compass prata em uma floresta, fotografia ilustrativa"
             fill
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="100vw"
           />
         </picture>

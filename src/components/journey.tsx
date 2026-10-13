@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Eyebrow } from "./ui";
-import Link from "next/link";
+import Link from "@/components/link";
 export function Journey() {
   const ref = useRef<HTMLElement>(null);
   const progress = useRef<HTMLDivElement>(null);

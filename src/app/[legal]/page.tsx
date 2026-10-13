@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/link";
 import { PageIntro } from "@/components/ui";
 import { site, whatsapp } from "@/config/site";
 const pages = {

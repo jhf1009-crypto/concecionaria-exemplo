@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/link";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { whatsapp } from "@/config/site";
 export function WhatsApp({

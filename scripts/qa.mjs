@@ -149,8 +149,8 @@ await page
   .getByRole("button", { name: "Iniciar atendimento", exact: true })
   .click();
 await page.getByText("Informe seu nome completo.", { exact: true }).waitFor();
-await page.getByLabel("Seu nome", { exact: true }).fill("Cliente Demonstração");
-await page.getByLabel("Telefone com DDD").fill("(62) 99985-8449");
+await page.locator("input[name=name]").fill("Cliente Demonstração");
+await page.locator("input[name=phone]").fill("(62) 99985-8449");
 await page.getByLabel(/Autorizo o uso/).check();
 await page
   .getByRole("button", { name: "Iniciar atendimento", exact: true })
@@ -172,8 +172,8 @@ await page.getByLabel("Quilometragem", { exact: true }).fill("42000");
 await page.getByRole("button", { name: "Continuar", exact: true }).click();
 await page.locator("input[type=file]").setInputFiles("qa/estoque-mobile.png");
 await page.getByRole("button", { name: "Continuar", exact: true }).click();
-await page.getByLabel("Seu nome", { exact: true }).fill("Cliente Avaliação");
-await page.getByLabel("Telefone com DDD").fill("(62) 99985-8449");
+await page.locator("input[name=name]").fill("Cliente Avaliação");
+await page.locator("input[name=phone]").fill("(62) 99985-8449");
 await page.getByLabel(/Autorizo o uso/).check();
 await page
   .getByRole("button", { name: "Solicitar avaliação", exact: true })

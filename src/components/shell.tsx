@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";

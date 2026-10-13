@@ -284,7 +284,7 @@ small {
 .fine-print {
   font-size: 11px;
   line-height: 1.7;
-  color: #69716b;
+  color: #60645d;
   margin-top: 20px;
 }
 .block {
@@ -4545,7 +4545,7 @@ th small {
     opacity 0.6s var(--ease);
 }
 .reveal.is-pending {
-  opacity: 0.65;
+  opacity: 1;
   transform: translateY(18px);
 }
 .reveal.is-visible {

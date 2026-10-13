@@ -31,4 +31,15 @@ GA4 opcional (`NEXT_PUBLIC_GA_ID`) só inicia após consentimento. Preferências
 
 Inventário global conferido. Aplicadas: **Refero Design** (guias de tipografia/motion/craft; MCP indisponível por assinatura), **Computer Use**, **Skill Creator** e skill local `skills/ninho-qa/SKILL.md` (Playwright, axe, Lighthouse, SEO, imagens e copy pt-BR). Referências públicas Porsche/Volvo; licenças Unsplash/Pexels conferidas. Sem imagens geradas por IA.
 
-QA e Lighthouse: resultados em `qa/` (ignorado no Git); medições serão registradas após validação. LCP/CLS locais não são CWV de campo; INP requer uso real.
+Build, ESLint e TypeScript passaram. Playwright validou busca/filtros, favoritos persistentes, comparação, galeria/teclado, simulador, erros/envio de formulários, fotos, menu móvel e endpoints SEO/API. Axe: zero violações nas 9 rotas verificadas, com movimento reduzido. Cookies, foto do Creta, 15 marcas, 16 modelos e parallax conferidos; sem overflow nos 7 breakpoints de 360 a 1920px.
+
+Lighthouse local, uma amostra por perfil após correções:
+
+| Perfil  | Performance antes → depois | Acessibilidade | Boas práticas | SEO | LCP final | CLS final |
+| ------- | -------------------------- | -------------- | ------------- | --- | --------- | --------- |
+| Celular | 35 → 72                    | 100            | 100           | 100 | 3,10 s    | 0,00006   |
+| Desktop | 71 → 82                    | 100            | 100           | 100 | 1,06 s    | 0,00023   |
+
+Performance **abaixo da meta de 95**, e LCP móvel acima de 2 s. Corrigidos o fallback inicial que deslocava a página (CLS desktop anterior 0,911), contraste durante revelação, probe eval do Zod sob CSP, carregamento duplicado do hero e prefetch de páginas. Mais otimização de JavaScript/carregamento móvel fica para a próxima rodada. Relatórios e screenshots em `qa/` (ignorado no Git). LCP/CLS de laboratório não são CWV de campo; INP não foi medido.
+
+Para reinstalar os assets: `node scripts/download-assets.mjs` (preserva a foto do Creta existente; forneça o caminho da foto como argumento para substituí-la). A fotografia do Creta foi fornecida pelo usuário; origem/licença pendentes de confirmação antes do uso comercial.

@@ -7,7 +7,7 @@ import {
   ClipboardCheck,
   ArrowUpRight,
 } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/link";
 import { PageIntro, WhatsApp } from "@/components/ui";
 import { Journey } from "@/components/journey";
 export const metadata: Metadata = {

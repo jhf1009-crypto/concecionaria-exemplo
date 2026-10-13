@@ -1,4 +1,6 @@
 import { z } from "zod";
+// A validação funciona sem gerar código por eval, preservando a CSP em produção.
+z.config({ jitless: true });
 export const leadSchema = z.object({
   name: z.string().trim().min(3, "Informe seu nome completo.").max(100),
   phone: z

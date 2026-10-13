@@ -14,7 +14,7 @@ import type { Vehicle } from "@/types/vehicle";
 import { VehicleCard, readSaved } from "./vehicle-card";
 import { money, number } from "@/lib/vehicles";
 import * as Dialog from "@radix-ui/react-dialog";
-import Link from "next/link";
+import Link from "@/components/link";
 export function Inventory({ vehicles }: { vehicles: Vehicle[] }) {
   const query = useSearchParams(),
     router = useRouter();
