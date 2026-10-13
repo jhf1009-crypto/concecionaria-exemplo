@@ -1,0 +1,20 @@
+export type Vehicle = {
+  id: string;
+  slug: string;
+  brand: string;
+  model: string;
+  version: string;
+  year: number;
+  km: number;
+  price: number;
+  transmission: "Automático" | "Manual";
+  fuel: "Flex" | "Gasolina" | "Diesel" | "Híbrido";
+  color: string;
+  body: "SUV" | "Sedã" | "Hatch" | "Picape" | "Esportivo" | "Perua";
+  image: string;
+  gallery: { src: string; alt: string }[];
+  features: string[];
+  featured: boolean;
+  tag: string;
+  status: "available" | "sold";
+};
